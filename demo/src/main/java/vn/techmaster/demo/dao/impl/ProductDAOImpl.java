@@ -31,7 +31,7 @@ public class ProductDAOImpl implements ProductDAO {
 
         return findAll().stream()
                 .filter(product -> product.getName().toLowerCase().startsWith(prefix.toLowerCase()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO {
 
         return findAll().stream()
                 .filter(product -> product.getPrice()>=min && product.getPrice() <= max)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ProductDAOImpl implements ProductDAO {
 
         return findAll().stream()
                 .filter(product -> product.getBrand().toLowerCase().equals(brand.toLowerCase()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
